@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; }
+dt { color: #c4c4c4; font-weight: 700; }
+dd { margin: .2rem 0 0; color: #929292; font-size: 1.05rem; min-height: 1.25rem; }
+.action { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; border-radius: .55rem; background: #087db5; padding: .65rem .8rem; color: white; font-size: .875rem; font-weight: 600; transition: background .15s; }
+.action:hover { background: #056895; }
+@media print { body > * { visibility: hidden; } .card-print, .card-print * { visibility: visible; } .card-print { position: absolute; left: 0; top: 0; width: 105mm !important; max-width: none !important; height: 148mm !important; box-shadow: none !important; } }

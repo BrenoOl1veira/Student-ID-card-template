@@ -1,0 +1,5 @@
+'use client';
+import { Download, FileText, Printer, Share2 } from 'lucide-react';
+import type { RefObject } from 'react';
+import { downloadPdf, downloadPng } from '@/utils/cardExport';
+export function CardActions({ target }: { target: RefObject<HTMLDivElement | null> }) { const get = () => target.current; const print = () => { document.body.classList.add('printing'); window.print(); setTimeout(() => document.body.classList.remove('printing'), 100); }; const share = async () => { try { await navigator.share({ title: 'Carteirinha de estudante' }); } catch { /* cancelled or unavailable */ } }; return <div className="grid grid-cols-2 gap-2 sm:flex"><button onClick={() => get() && downloadPng(get()!)} className="action"><Download size={17} /> PNG</button><button onClick={() => get() && downloadPdf(get()!)} className="action"><FileText size={17} /> PDF</button><button onClick={print} className="action"><Printer size={17} /> Imprimir</button><button onClick={share} className="action"><Share2 size={17} /> Compartilhar</button></div>; }

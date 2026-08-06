@@ -1,0 +1,1 @@
+export interface StudentCardData { fullName: string; cpf: string; birthDate: string; course: string; enrollment: string; unit: string; campus: string; modality: string; period: string; issuedAt: string; validUntil: string; photoUrl?: string; }
